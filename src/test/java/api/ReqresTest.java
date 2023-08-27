@@ -23,4 +23,8 @@ public class ReqresTest {
             Assert.assertTrue(us.getAvatar().contains(us.getId().toString()));
         }
     }
+    @Test
+    public void testTest(){
+        Assert.assertTrue(false);
+    }
 }
