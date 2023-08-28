@@ -29,8 +29,6 @@ public class ReqresTest {
 
         for(int i = 0; i < avatars.size(); i++){
             Assert.assertTrue(avatars.get(i).contains(ids.get(i)));
-
-
         }
     }
 }
