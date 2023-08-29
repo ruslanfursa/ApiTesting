@@ -13,6 +13,7 @@ public class SuccessRegistration {
         super();
     }
 
+
     public Integer getId() {
         return id;
     }
