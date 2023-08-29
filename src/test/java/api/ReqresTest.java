@@ -75,5 +75,6 @@ public class ReqresTest {
                 .when()
                 .delete("/api/users/2")
                 .then().log().all();
+
     }
 }
