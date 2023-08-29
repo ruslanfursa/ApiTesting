@@ -66,4 +66,14 @@ public class ReqresTest {
                 .extract().as(UnSuccessRegistration.class);
         Assert.assertEquals(errorMessage, unSuccessRegistration.getError());
     }
+
+    @Test
+    public void testDeleteUser() {
+        Specifications.installSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(204));
+
+        given()
+                .when()
+                .delete("/api/users/2")
+                .then().log().all();
+    }
 }
