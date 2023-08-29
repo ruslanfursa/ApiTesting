@@ -51,4 +51,19 @@ public class ReqresTest {
         Assert.assertEquals(id, successRegistration.getId());
         Assert.assertEquals(token, successRegistration.getToken());
     }
+
+    @Test
+    public void testUnsuccessfulRegistration() {
+        Specifications.installSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(400));
+        String errorMessage = "Missing password";
+
+        Registration newUser = new Registration("sydney@fife", "");
+        UnSuccessRegistration unSuccessRegistration = given()
+                .when()
+                .body(newUser)
+                .post("/api/register")
+                .then().log().all()
+                .extract().as(UnSuccessRegistration.class);
+        Assert.assertEquals(errorMessage, unSuccessRegistration.getError());
+    }
 }
